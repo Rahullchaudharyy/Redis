@@ -6,6 +6,7 @@ import { genFSLPPdf } from "./services/pdf/genFSLPPdf";
 import { genMeasurementsPdf } from "./services/pdf/genMeasurementstsPdf";
 import { genMembershipPDF } from "./services/pdf/genMembershipPDF";
 import { genProjectTypePdf } from "./services/pdf/genProjectTypePdf";
+import { genRewardPayoutpdf } from "./services/pdf/genRewardPayoutPDF";
 import { genSdgListPdf } from "./services/pdf/genSdgsListPdf";
 import { genPdfTreeOrders } from "./services/pdf/genTreePlantingOrderPdf";
 import { genPdfTrees } from "./services/pdf/genTreesPdf";
@@ -57,8 +58,8 @@ export const startPdfWorker = () => {
         await genFSLPPdf(email);
         break;
       case "reward_payout":
-      // await
-      // break;
+        await genRewardPayoutpdf(email);
+        break;
 
       default:
         console.log("Unknown data - " + base);
